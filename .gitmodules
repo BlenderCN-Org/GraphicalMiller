@@ -1,0 +1,3 @@
+[submodule "Modules/MST/MultithreadedMiller"]
+	path = Modules/MST/MultithreadedMiller
+	url = https://github.com/jeremymm/MultithreadedMiller.git
