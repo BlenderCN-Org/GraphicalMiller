@@ -1,0 +1,12 @@
+/operator_file_export.py
+/operator_file_import.py
+/operator_mesh_add.py
+/operator_modal.py
+/operator_modal_draw.py
+/operator_modal_timer.py
+/operator_modal_view3d.py
+/operator_simple.py
+/operator_uv.py
+/ui_menu.py
+/ui_menu_simple.py
+/ui_panel_simple.py
