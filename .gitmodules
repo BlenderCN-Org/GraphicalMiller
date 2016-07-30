@@ -7,3 +7,9 @@
 [submodule "Modules/MST/MathematicalMiller"]
 	path = Modules/MST/MathematicalMiller
 	url = https://github.com/jeremymm/MathematicalMiller.git
+
+
+	
+[submodule "Modules/MST/Modules/3rdParty/GLEW"]
+	path = Modules/MST/Modules/3rdParty/GLEW
+	url = https://github.com/nigels-com/glew.git
