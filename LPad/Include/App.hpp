@@ -26,7 +26,7 @@
 
 //***************************************************************************//
 // MST includes
-#include "MultithreadedMiller.hpp"
+//#include "MultithreadedMiller.hpp"
 #include "GraphicalMiller.hpp"
 
 #include "InputMiller.hpp"
@@ -89,7 +89,7 @@ public:
 
   static class App* Instance(HINSTANCE hInstance = NULL)
   {
-    if(mpInstance == NULL && hInstance)
+    if(mpInstance == nullptr && hInstance)
       mpInstance = new App(hInstance);
     return mpInstance;
   }

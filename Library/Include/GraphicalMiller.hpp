@@ -81,17 +81,6 @@ namespace MST
     //-----------------------------------------------------------------------//
 
     //-----------------------------------------------------------------------//
-    /// This method will check to see if the Device is lost.
-    /// Return Value: True if the device is lost otherwise this will return false.
-    bool DeviceLost();
-
-    /// The method will reset the device and reallocation and resource allocated
-    /// in the D3DPOOL_DEFAULT
-    /// Return Value: True if the device was reset otherwise this will return false.
-    bool ResetDevice();
-    //-----------------------------------------------------------------------//
-
-    //-----------------------------------------------------------------------//
     /// This method will load a configuration file. This configuration file can
     /// used to communicate things such are resolution and anti-aliasing.
     /// Return Value: This method will return true when the configuration file
@@ -104,10 +93,6 @@ namespace MST
     //-----------------------------------------------------------------------//
     Graphics();
     ~Graphics();
-    //-----------------------------------------------------------------------//
-
-    //-----------------------------------------------------------------------//
-    unsigned long  GetNumberOfAdapters();
     //-----------------------------------------------------------------------//
 
     //-----------------------------------------------------------------------//
@@ -131,17 +116,13 @@ namespace MST
     //-----------------------------------------------------------------------//
 
     //-----------------------------------------------------------------------//
-    void  SetBackBufferSize(unsigned long ulWidth, unsigned long ulHeight);
-    //-----------------------------------------------------------------------//
-
-    //-----------------------------------------------------------------------//
     unsigned long  MaxVertexBufferSize() const;
     unsigned long  MaxIndexBufferSize() const;
     //-----------------------------------------------------------------------//
 
     //-----------------------------------------------------------------------//
-    int  Render();
-    void  SwapBuffer();
+    int  Render() const;
+	  static void  SwapBuffer();
     //-----------------------------------------------------------------------//
 
     //-----------------------------------------------------------------------//

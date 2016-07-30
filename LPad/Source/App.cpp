@@ -19,6 +19,8 @@
 //***************************************************************************//
 #include "App.hpp"
 
+#include "Timer.hpp"
+
 #include <assert.h>
 #include <string>
 //***************************************************************************//
@@ -39,7 +41,7 @@ HINSTANCE  App::smhInstance;
 HANDLE     App::mhAppMutex;
 
 WNDCLASS   App::smMainWcl;
-HWND       App::smhWindow             = NULL;
+HWND       App::smhWindow             = nullptr;
 RECT       App::smMainWindowRect;
 
 bool       App::smbWindowActive        = false;
@@ -47,11 +49,11 @@ bool       App::smbHasFocus            = true;
 bool       App::smbWindowOpen          = true;
 bool       App::smbWindowed            = true;
 
-class App* App::mpInstance = NULL;
+class App* App::mpInstance = nullptr;
 //***************************************************************************//
 App::App(HINSTANCE hInstance)
 {
-  mpGraphics = NULL;
+  mpGraphics = nullptr;
   this->smhInstance = hInstance;
   smbHasFocus = false;
 }
@@ -91,9 +93,9 @@ long App::Run()
   MST::Random<float> oRandom;
   Scene*  pScene   = this->mpGraphics->CreateScene(static_cast<string>("DEFAULT_SCENE"));
 
-  Mesh*   pMesh     = NULL;
-  Camera* pCamera   = NULL;
-  Light*  pLight    = NULL;
+  Mesh*   pMesh     = nullptr;
+  Camera* pCamera   = nullptr;
+  Light*  pLight    = nullptr;
 
   // Load the scene if we can find one.
   ifstream ifsSceneFile;
@@ -129,8 +131,8 @@ long App::Run()
         sstmNewName << pMesh->Name();
         sstmNewName << ulIndex;
         Mesh* pNewClone = pScene->CloneMesh(pMesh->Name(), sstmNewName.str());
-        float fHeight = pNewClone->BoundVolume()->Height();
-        pNewClone->Position(oRandom.Generate(-fWidth/2.0F, fWidth/2.0F), fHeight/2.0F, oRandom.Generate(-fDepth/2.0F, fDepth/2.0F) );
+        float height = pNewClone->BoundVolume()->Height();
+        pNewClone->Position(oRandom.Generate(-fWidth/2.0F, fWidth/2.0F), height/2.0F, oRandom.Generate(-fDepth/2.0F, fDepth/2.0F) );
 
       }
     }
@@ -148,7 +150,7 @@ long App::Run()
 
     while(smbWindowOpen && !bEscapePressed)
     {
-      float fDT = (float)oTimer.DT(TIMER_1);
+      float fDT = static_cast<float>(oTimer.DT(TIMER_1));
 
       if(Input::Instance()->GetKeyboard()->KeyDown(HIK_V) && 
         !Input::Instance()->GetKeyboard()->KeyDown(HIK_RSHIFT))
@@ -253,7 +255,6 @@ void App::End()
   mpGraphics->Uninitialize();
   this->KillWindow();
   delete mpGraphics;
-  return;
 }
 //***************************************************************************//
 
@@ -381,10 +382,10 @@ bool App::EnableCrashingOnAllCrashes()
  
 
   HMODULE kernel32 = LoadLibraryA("kernel32.dll"); 
-  tGetPolicy pGetPolicy = (tGetPolicy)GetProcAddress(kernel32, 
-    "GetProcessUserModeExceptionPolicy"); 
-  tSetPolicy pSetPolicy = (tSetPolicy)GetProcAddress(kernel32, 
-    "SetProcessUserModeExceptionPolicy"); 
+  tGetPolicy pGetPolicy = reinterpret_cast<tGetPolicy>(GetProcAddress(kernel32, 
+                                                                      "GetProcessUserModeExceptionPolicy")); 
+  tSetPolicy pSetPolicy = reinterpret_cast<tSetPolicy>(GetProcAddress(kernel32, 
+                                                                      "SetProcessUserModeExceptionPolicy")); 
   if(pGetPolicy && pSetPolicy) 
   { 
     DWORD dwFlags; 
@@ -408,12 +409,12 @@ bool App::SpawnWindow(long lWidth, long lHeight, bool bWindowed)
   smMainWcl.lpszClassName = APP_WINDOW_NAME;
   smMainWcl.lpfnWndProc   = WindowProc;
   smMainWcl.style         = CS_HREDRAW | CS_VREDRAW | CS_OWNDC;
-  smMainWcl.hIcon         = LoadIcon(NULL, IDI_WINLOGO);
-  smMainWcl.hCursor       = LoadCursor(NULL, IDC_ARROW);
-  smMainWcl.lpszMenuName  = NULL;
+  smMainWcl.hIcon         = LoadIcon(nullptr, IDI_WINLOGO);
+  smMainWcl.hCursor       = LoadCursor(nullptr, IDC_ARROW);
+  smMainWcl.lpszMenuName  = nullptr;
   smMainWcl.cbClsExtra    = 0;
   smMainWcl.cbWndExtra    = 0;
-  smMainWcl.hbrBackground = (HBRUSH) GetStockObject( NULL_BRUSH );
+  smMainWcl.hbrBackground = static_cast<HBRUSH>(GetStockObject( NULL_BRUSH ));
   DWORD dwExStyle;
   DWORD dwStyle;
   smMainWindowRect.left   = 0; // Set Left Value To 0
@@ -444,14 +445,14 @@ bool App::SpawnWindow(long lWidth, long lHeight, bool bWindowed)
       if(ChangeDisplaySettings(&dmScreenSettings, CDS_FULLSCREEN) != DISP_CHANGE_SUCCESSFUL)
       {
         // If The Mode Fails, Offer Two Options.  Quit Or Use Windowed Mode.
-        if (MessageBox(NULL, L"The Requested Fullscreen Mode Is Not Supported By\nYour Video Card. Use Windowed Mode Instead?", L"Graphical Miller" , MB_YESNO | MB_ICONEXCLAMATION) == IDYES)
+        if (MessageBox(nullptr, L"The Requested Fullscreen Mode Is Not Supported By\nYour Video Card. Use Windowed Mode Instead?", L"Graphical Miller" , MB_YESNO | MB_ICONEXCLAMATION) == IDYES)
         {
           smbWindowed = true;		// Windowed Mode Selected.
         }
         else
         {
           // Pop Up A Message Box Letting User Know The Program Is Closing.
-          MessageBox(NULL, L"Program Will Now Close.", L"ERROR", MB_OK | MB_ICONSTOP);
+          MessageBox(nullptr, L"Program Will Now Close.", L"ERROR", MB_OK | MB_ICONSTOP);
           bErrorOccured = true;
         }
       }
@@ -498,13 +499,13 @@ bool App::SpawnWindow(long lWidth, long lHeight, bool bWindowed)
         sx, sy,								// Window Position
         smMainWindowRect.right  - smMainWindowRect.left,	// Calculate Window Width
         smMainWindowRect.bottom - smMainWindowRect.top,	// Calculate Window Height
-        NULL,								// No Parent Window
-        NULL,								// No Menu
+        nullptr,								// No Parent Window
+        nullptr,								// No Menu
         smhInstance,							// Instance
-        NULL)))								// Dont Pass Anything To WM_CREATE
+        nullptr)))								// Dont Pass Anything To WM_CREATE
       {
         App::KillWindow();								// Reset The Display
-        MessageBox(NULL, L"Window Creation Error.", L"ERROR", MB_OK | MB_ICONEXCLAMATION);
+        MessageBox(nullptr, L"Window Creation Error.", L"ERROR", MB_OK | MB_ICONEXCLAMATION);
         return FALSE;								// Return FALSE
       }
 
@@ -534,22 +535,22 @@ void App::KillWindow()
 {
   if(!smbWindowed)										// Are We In Fullscreen Mode?
   {
-    ChangeDisplaySettings(NULL,0);					// If So Switch Back To The Desktop
+    ChangeDisplaySettings(nullptr,0);					// If So Switch Back To The Desktop
     ShowCursor(TRUE);								// Show Mouse Pointer
   }
 
   if (smhWindow && !DestroyWindow(smhWindow))					// Are We Able To Destroy The Window?
   {
-    MessageBox(NULL, L"Could Not Release hWnd.", L"SHUTDOWN ERROR", MB_OK | MB_ICONINFORMATION);
-    smhWindow = NULL;										// Set hWnd To NULL
+    MessageBox(nullptr, L"Could Not Release hWnd.", L"SHUTDOWN ERROR", MB_OK | MB_ICONINFORMATION);
+    smhWindow = nullptr;										// Set hWnd To NULL
   }
 
   if (!UnregisterClass(APP_WINDOW_NAME,smhInstance))			// Are We Able To Unregister Class
   {
-    MessageBox(NULL, L"Could Not Unregister Class.", L"SHUTDOWN ERROR", MB_OK | MB_ICONINFORMATION);
-    smhInstance = NULL;									// Set hInstance To NULL
+    MessageBox(nullptr, L"Could Not Unregister Class.", L"SHUTDOWN ERROR", MB_OK | MB_ICONINFORMATION);
+    smhInstance = nullptr;									// Set hInstance To NULL
   }
 
-  ClipCursor(NULL);
+  ClipCursor(nullptr);
 }
 //***************************************************************************//

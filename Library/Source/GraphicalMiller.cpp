@@ -124,7 +124,7 @@ namespace MST
     if(!(smhDeviceContext = GetDC(hWindow)))
     {
       lResultCode = -1;
-      smhDeviceContext = NULL;
+      smhDeviceContext = nullptr;
     }
 
     if(lResultCode > 0 && !(PixelFormat = ChoosePixelFormat(smhDeviceContext, &pfd)))	// Did Windows Find A Matching Pixel Format?
@@ -244,7 +244,7 @@ namespace MST
   //-------------------------------------------------------------------------//
   // Base::RenderScene() clears the depth and color buffer and starts
   // rendering the scene
-  int Graphics::Render()									
+  int Graphics::Render() const
   {
     if(this->mpActiveScene)
       this->mpActiveScene->Render();
@@ -287,20 +287,6 @@ namespace MST
   {
     this->mpActiveScene = new Scene(this);
     return this->mpActiveScene;
-  }
-  //-------------------------------------------------------------------------//
-
-  //-------------------------------------------------------------------------//
-  bool Graphics::LoadConfig(const std::string& strFileName)
-  {
-    return false;
-  }
-  //-------------------------------------------------------------------------//
-
-  //-------------------------------------------------------------------------//
-  unsigned long Graphics::GetNumberOfAdapters()
-  {
-    return 0;
   }
   //-------------------------------------------------------------------------//
 

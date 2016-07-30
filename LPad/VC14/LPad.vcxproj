@@ -106,7 +106,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <WholeProgramOptimization>false</WholeProgramOptimization>
-      <AdditionalIncludeDirectories>..\..\..\InputMiller\Library\Include;..\..\..\MathmaticalMiller\Library\Include;..\..\..\MultithreadMiller\Library\Include;..\..\Library\Include;..\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\Modules\MST\InputMiller\Library\Include;..\..\Modules\MST\MathematicalMiller\Library\Include;..\..\Modules\MST\MultithreadedMiller\Library\Include;..\..\..\MultithreadMiller\Library\Include;..\..\Library\Include;..\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;_DEBUG;WIN32;WINDOWS;WIN32_LEAN_AND_MEAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -159,7 +159,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <WholeProgramOptimization>true</WholeProgramOptimization>
-      <AdditionalIncludeDirectories>..\..\..\InputMiller\Library\Include;..\..\..\MathmaticalMiller\Library\Include;..\..\..\MultithreadedMiller\Library\Include;..\..\Library\Include;..\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\Modules\MST\InputMiller\Library\Include;..\..\Modules\MST\MathematicalMiller\Library\Include;..\..\Modules\MST\MultithreadedMiller\Library\Include;..\..\..\MultithreadedMiller\Library\Include;..\..\Library\Include;..\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;_DEBUG;WIN32;WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -213,7 +213,7 @@
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <OmitFramePointers>true</OmitFramePointers>
       <WholeProgramOptimization>true</WholeProgramOptimization>
-      <AdditionalIncludeDirectories>..\..\..\InputMiller\Library\Include;..\..\..\MathmaticalMiller\Library\Include;..\..\..\MultithireadedMiller\Library\Include;..\..\Library\Include;..\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\Modules\MST\InputMiller\Library\Include;..\..\Modules\MST\MathematicalMiller\Library\Include;..\..\Modules\MST\MultithreadedMiller\Library\Include;..\..\..\MultithireadedMiller\Library\Include;..\..\Library\Include;..\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;NDEBUG;WIN32;WINDOWS;_SECURE_SCL=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <MinimalRebuild>false</MinimalRebuild>
@@ -266,7 +266,7 @@
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <OmitFramePointers>true</OmitFramePointers>
       <WholeProgramOptimization>false</WholeProgramOptimization>
-      <AdditionalIncludeDirectories>..\..\..\InputMiller\Library\Include;..\..\..\MathmaticalMiller\Library\Include;..\..\..\MultithreadedMiller\Library\Include;..\..\Library\Include;..\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\Modules\MST\InputMiller\Library\Include;..\..\Modules\MST\MathematicalMiller\Library\Include;..\..\Modules\MST\MultithreadedMiller\Library\Include;..\..\..\MultithreadedMiller\Library\Include;..\..\Library\Include;..\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;NDEBUG;WIN32;WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <MinimalRebuild>false</MinimalRebuild>
