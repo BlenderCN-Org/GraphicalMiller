@@ -1,3 +1,6 @@
 [submodule "Modules/MST/MultithreadedMiller"]
 	path = Modules/MST/MultithreadedMiller
 	url = https://github.com/jeremymm/MultithreadedMiller.git
+[submodule "Modules/MST/InputMiller"]
+	path = Modules/MST/InputMiller
+	url = ../InputMiller.git
