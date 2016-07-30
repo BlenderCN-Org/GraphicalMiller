@@ -2,31 +2,21 @@
 // Light Class Interface
 //
 // Created July 08, 2005
-// By: Jeremy M Miller
+// By: Jeremy Michael Miller
 //
-// Copyright (c) 2005-2011  Jeremy M Miller.  All rights reserved.
-// This source code module, and all information, data, and algorithms
-// associated with it, are part of BlueHabu technology (tm).
-//
-// Usage of HabuGraphics is subject to the appropriate license agreement.
-// A proprietary/commercial licenses are available.
-//                 
-// HabuGraphics is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// HabuGraphics is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with HabuGraphics.  If not, see <http://www.gnu.org/licenses/>.
+// Copyright (c) 2015-2016 Jeremy Michael Miller. 
+// Author: = "Jeremy Michael Miller"
+// Copyright: = "Copyright 2005-2016, Graphical Miller,  All rights reserved."
+// Credits = ["Jeremy Michael Miller"]
+// License: "Fair use v0.9"
+// Version: "0.0.1"
+// Maintainer: "Jeremy Michael Miller"
+// Email: "maybe_later@mst.dnsalias.net"
+// Status: "Alpha"
 //***************************************************************************//
 
-#ifndef HABU_GRAPHICS_LIGHT_HPP
-#define HABU_GRAPHICS_LIGHT_HPP
+#ifndef MST_GRAPHICS_LIGHT_HPP
+#define MST_GRAPHICS_LIGHT_HPP
 
 //***************************************************************************//
 // 3rdParty Includes
@@ -45,7 +35,7 @@
 //***************************************************************************//
 	
 //***************************************************************************//
-namespace HabuTech
+namespace MST
 {
   //*************************************************************************//
   enum LightID
@@ -110,56 +100,56 @@ namespace HabuTech
 
     //-----------------------------------------------------------------------//
     /// Sets all member data to zero and has light turned off
-    void _cdecl Initialize();
+    void  Initialize();
     //-----------------------------------------------------------------------//
 
     //-----------------------------------------------------------------------//
-    bool _cdecl Load(std::ifstream& ifs);
+    bool  Load(std::ifstream& ifs);
     //-----------------------------------------------------------------------//
 
     //-----------------------------------------------------------------------//
-    void _cdecl Position(float fX, float fY, float fZ);
+    void  Position(float fX, float fY, float fZ);
     //-----------------------------------------------------------------------//
 
     //-----------------------------------------------------------------------//
-    void _cdecl Move(float fX, float fY, float fZ);
+    void  Move(float fX, float fY, float fZ);
     /// Moves the light left or right relative to its current orientation
-    void _cdecl Strafe(float fX);
+    void  Strafe(float fX);
     /// Moves the light forward or backwards relative to its current orientation
-    void _cdecl Advance(float fZ);
+    void  Advance(float fZ);
     /// Moves the light up or down relative to its current orientation
-    void _cdecl Elevate(float fY);
+    void  Elevate(float fY);
     //-----------------------------------------------------------------------//
 
     //-----------------------------------------------------------------------//
-    void _cdecl Forward(float fX, float fY, float fZ);
-    void _cdecl Up(float fX, float fY, float fZ);
-    void _cdecl Right(float fX, float fY, float fZ);
+    void  Forward(float fX, float fY, float fZ);
+    void  Up(float fX, float fY, float fZ);
+    void  Right(float fX, float fY, float fZ);
     //-----------------------------------------------------------------------//
 
     //-----------------------------------------------------------------------//
-    void _cdecl SetAmbient(float fRed, float fGreen, float fBlue);
-    void _cdecl SetAmbient(float faColor[3]);
+    void  SetAmbient(float fRed, float fGreen, float fBlue);
+    void  SetAmbient(float faColor[3]);
     //-----------------------------------------------------------------------//
 
     //-----------------------------------------------------------------------//
-    void _cdecl SetDiffuse(float fRed, float fGreen, float fBlue);
-    void _cdecl SetDiffuse(float faColor[3]);
+    void  SetDiffuse(float fRed, float fGreen, float fBlue);
+    void  SetDiffuse(float faColor[3]);
     //-----------------------------------------------------------------------//
 
     //-----------------------------------------------------------------------//
-    void _cdecl SetSpecular(float fRed, float fGreen, float fBlue);
-    void _cdecl SetSpecular(float faColor[3]);
+    void  SetSpecular(float fRed, float fGreen, float fBlue);
+    void  SetSpecular(float faColor[3]);
     //-----------------------------------------------------------------------//
 
     //-----------------------------------------------------------------------//
-    void _cdecl TurnLightOn();
-    void _cdecl TurnLightOff();
+    void  TurnLightOn();
+    void  TurnLightOff();
     //-----------------------------------------------------------------------//
     //***********************************************************************//
   }; // End of class Light : public Object
   //*************************************************************************//
-} // End of namespace HabuTech
+} // End of namespace MST
 //***************************************************************************//
 
-#endif HABU_GRAPHICS_LIGHT_HPP
+#endif MST_GRAPHICS_LIGHT_HPP

@@ -2,27 +2,17 @@
 // Mesh Class Implementation
 //
 // Created Aug 8, 2005
-// By: Jeremy M Miller
+// By: Jeremy Michael Miller
 //
-// Copyright (c) 2005-2011 Jeremy M Miller.  All rights reserved.
-// This source code module, and all information, data, and algorithms
-// associated with it, are part of BlueHabu technology (tm).
-//
-// Usage of HabuGraphics is subject to the appropriate license agreement.
-// A proprietary/commercial licenses are available.
-//                 
-// HabuGraphics is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// HabuGraphics is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with HabuGraphics.  If not, see <http://www.gnu.org/licenses/>.
+// Copyright (c) 2005-2016 Jeremy Michael Miller. 
+// Author: = "Jeremy Michael Miller"
+// Copyright: = "Copyright 2005-2016, Graphical Miller,  All rights reserved."
+// Credits = ["Jeremy Michael Miller"]
+// License: "Fair use v0.9"
+// Version: "0.0.1"
+// Maintainer: "Jeremy Michael Miller"
+// Email: "maybe_later@mst.dnsalias.net"
+// Status: "Alpha"
 //***************************************************************************//
 
 //***************************************************************************//
@@ -47,14 +37,14 @@
 
 //***************************************************************************//
 //Local Includes
-#include "HabuGraphics.hpp"
+#include "GraphicalMiller.hpp"
 #include "Surface.hpp"
 #include "Shader.hpp"
 //***************************************************************************//
 
 //***************************************************************************//
-// BlueHabu Technology Includes
-#include <HabuMath.hpp>
+// MST Includes
+#include <MathmaticalMiller.hpp>
 //***************************************************************************//
 
 //***************************************************************************//
@@ -68,7 +58,7 @@ using namespace std;
 //***************************************************************************//
 
 //***************************************************************************//
-namespace HabuTech
+namespace MST
 {
   //-------------------------------------------------------------------------//
   BoundingVolume::BoundingVolume()

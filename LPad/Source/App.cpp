@@ -2,27 +2,17 @@
 // App Object Implementation
 //
 // Created Jan 01, 2005
-// By: Jeremy M Miller
+// By: Jeremy Michael Miller
 //
-// Copyright (c) 2005-2011 Jeremy M Miller.  All rights reserved.
-// This source code module, and all information, data, and algorithms
-// associated with it, are part of BlueHabu technology (tm).
-//
-// Usage of HabuGraphics is subject to the appropriate license agreement.
-// A proprietary/commercial licenses are available.
-//                 
-// HabuGraphics is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// HabuGraphics is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with HabuGraphics.  If not, see <http://www.gnu.org/licenses/>.
+// Copyright (c) 2005-2016 Jeremy Michael Miller. 
+// Author: = "Jeremy Michael Miller"
+// Copyright: = "Copyright 2005-2016, Graphical Miller,  All rights reserved."
+// Credits = ["Jeremy Michael Miller"]
+// License: "Fair use v0.9"
+// Version: "0.0.1"
+// Maintainer: "Jeremy Michael Miller"
+// Email: "maybe_later@mst.dnsalias.net"
+// Status: "Alpha"
 //***************************************************************************//
 
 
@@ -34,13 +24,13 @@
 //***************************************************************************//
 
 //***************************************************************************//
-using namespace HabuTech;
+using namespace MST;
 using namespace std;
 //***************************************************************************//
 
 #define APP_TITLE              L"LPad"
 #define APP_MUTEX_NAME         L"Global\\" APP_TITLE "_APP_MUTEX_"
-#define APP_WINDOW_NAME        L"HabuGraphicsWindow"
+#define APP_WINDOW_NAME        L"GraphicalMillerWindow"
 #define APP_SLEEP_TIME         25
 #define APP_VERSION            0.050F
 
@@ -97,8 +87,8 @@ bool App::Initialize(char* cpCommandLine)
 long App::Run() 
 {  
   bool bEscapePressed = false;
-  HabuTech::Timer oTimer;
-  HabuTech::Random<float> oRandom;
+  MST::Timer oTimer;
+  MST::Random<float> oRandom;
   Scene*  pScene   = this->mpGraphics->CreateScene(static_cast<string>("DEFAULT_SCENE"));
 
   Mesh*   pMesh     = NULL;
@@ -454,7 +444,7 @@ bool App::SpawnWindow(long lWidth, long lHeight, bool bWindowed)
       if(ChangeDisplaySettings(&dmScreenSettings, CDS_FULLSCREEN) != DISP_CHANGE_SUCCESSFUL)
       {
         // If The Mode Fails, Offer Two Options.  Quit Or Use Windowed Mode.
-        if (MessageBox(NULL, L"The Requested Fullscreen Mode Is Not Supported By\nYour Video Card. Use Windowed Mode Instead?", L"HabuGraphics" , MB_YESNO | MB_ICONEXCLAMATION) == IDYES)
+        if (MessageBox(NULL, L"The Requested Fullscreen Mode Is Not Supported By\nYour Video Card. Use Windowed Mode Instead?", L"Graphical Miller" , MB_YESNO | MB_ICONEXCLAMATION) == IDYES)
         {
           smbWindowed = true;		// Windowed Mode Selected.
         }

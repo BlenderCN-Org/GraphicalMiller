@@ -1,32 +1,22 @@
 //***************************************************************************//
-// HabuGraphics Base Class Interface
+// Graphical Miller Base Class Interface
 //
 // Created Jan 01, 2005
-// By: Jeremy M Miller
+// By: Jeremy Michael Miller
 //
-// Copyright (c) 2005-2011 Jeremy M Miller.  All rights reserved.
-// This source code module, and all information, data, and algorithms
-// associated with it, are part of BlueHabu technology (tm).
-//
-// Usage of HabuGraphics is subject to the appropriate license agreement.
-// A proprietary/commercial licenses are available.
-//                 
-// HabuGraphics is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// HabuGraphics is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with HabuGraphics.  If not, see <http://www.gnu.org/licenses/>.
+// Copyright (c) 2005-2016 Jeremy Michael Miller. 
+// Author: = "Jeremy Michael Miller"
+// Copyright: = "Copyright 2005-2016, Graphical Miller,  All rights reserved."
+// Credits = ["Jeremy Michael Miller"]
+// License: "Fair use v0.9"
+// Version: "0.0.4"
+// Maintainer: "Jeremy Michael Miller"
+// Email: "maybe_later@mst.dnsalias.net"
+// Status: "Alpha"
 //***************************************************************************//
 
-#ifndef HABU_GRAPHICS_HPP
-#define HABU_GRAPHICS_HPP
+#ifndef MST_GRAPHICS_HPP
+#define MST_GRAPHICS_HPP
 
 //***************************************************************************//
 
@@ -34,7 +24,7 @@
 #define DEFAULT_WINDOW_WIDTH  800
 #define DEFAULT_WINDOW_HEIGHT 600
 
-#define HABU_GRAPHICS_VERSION 0.004F
+#define MST_GRAPHICS_VERSION 0.004F
 //***************************************************************************//
 
 //***************************************************************************//
@@ -47,7 +37,7 @@
 //***************************************************************************//
 
 //***************************************************************************//
-namespace HabuTech
+namespace MST
 {
   //*************************************************************************//
   enum Transforms
@@ -108,17 +98,6 @@ namespace HabuTech
     ///               loads successfully, otherwise this method will return false.
     bool LoadConfig(const std::string& strFileName);
     //-----------------------------------------------------------------------//
-
-    //-----------------------------------------------------------------------//
-    /// This method will attempt the set the multi-sample value. IE anti-alias.
-    /// The method will only succeed is the current device can do the requested
-    /// number of multi-samples in hardware.
-    /// Parameter 1: This parameter is used to communication the desired number
-    ///              multi-samples to do per frame
-    /// Return value: This method will return true if the desired multi-sample 
-    ///               value was set otherwise this method will return false.
-    bool SetMultiSample(unsigned long ulSamples);
-    //-----------------------------------------------------------------------//
     //***********************************************************************//
   public:
     //***********************************************************************//
@@ -128,52 +107,52 @@ namespace HabuTech
     //-----------------------------------------------------------------------//
 
     //-----------------------------------------------------------------------//
-    unsigned long _cdecl GetNumberOfAdapters();
+    unsigned long  GetNumberOfAdapters();
     //-----------------------------------------------------------------------//
 
     //-----------------------------------------------------------------------//
-    static long _cdecl Initialize(HWND hWindow, unsigned long ulWidth = DEFAULT_WINDOW_WIDTH, unsigned long ulHeight = DEFAULT_WINDOW_HEIGHT);
-    static long _cdecl Uninitialize();
+    static long  Initialize(HWND hWindow, unsigned long ulWidth = DEFAULT_WINDOW_WIDTH, unsigned long ulHeight = DEFAULT_WINDOW_HEIGHT);
+    static long  Uninitialize();
     //-----------------------------------------------------------------------//
 
     //-----------------------------------------------------------------------//
-    void _cdecl WindowDimensions(unsigned long ulWidth, unsigned long ulHeight);
-    unsigned long _cdecl WindowWidth() const;
-    unsigned long _cdecl WindowHeight() const;
+    void  WindowDimensions(unsigned long ulWidth, unsigned long ulHeight);
+    unsigned long  WindowWidth() const;
+    unsigned long  WindowHeight() const;
 
-    void  _cdecl NearClipPlane(float fNear);
-    float _cdecl NearClipPlane() const;
+    void   NearClipPlane(float fNear);
+    float  NearClipPlane() const;
     
-    void  _cdecl FarClipPlane(float fFar);
-    float _cdecl FarClipPlane() const;
+    void   FarClipPlane(float fFar);
+    float  FarClipPlane() const;
     
-    void  _cdecl FieldOfVeiw(float fDegrees);
-    float _cdecl FieldOfView() const;
+    void   FieldOfVeiw(float fDegrees);
+    float  FieldOfView() const;
     //-----------------------------------------------------------------------//
 
     //-----------------------------------------------------------------------//
-    void _cdecl SetBackBufferSize(unsigned long ulWidth, unsigned long ulHeight);
+    void  SetBackBufferSize(unsigned long ulWidth, unsigned long ulHeight);
     //-----------------------------------------------------------------------//
 
     //-----------------------------------------------------------------------//
-    unsigned long _cdecl MaxVertexBufferSize() const;
-    unsigned long _cdecl MaxIndexBufferSize() const;
+    unsigned long  MaxVertexBufferSize() const;
+    unsigned long  MaxIndexBufferSize() const;
     //-----------------------------------------------------------------------//
 
     //-----------------------------------------------------------------------//
-    int _cdecl Render();
-    void _cdecl SwapBuffer();
+    int  Render();
+    void  SwapBuffer();
     //-----------------------------------------------------------------------//
 
     //-----------------------------------------------------------------------//
-    void _cdecl ToggleWireFrame();
+    void  ToggleWireFrame();
     //-----------------------------------------------------------------------//
 
     //-----------------------------------------------------------------------//
-    class Scene* _cdecl CreateScene(const std::string& rstrName);
-    void _cdecl DestroyScene(const std::string& rstrName);
-    void _cdecl DestroyScene(class Scene** ppScene);
-    class Scene* _cdecl GetScene(const std::string& rstrName);
+    class Scene*  CreateScene(const std::string& rstrName);
+    void  DestroyScene(const std::string& rstrName);
+    void  DestroyScene(class Scene** ppScene);
+    class Scene*  GetScene(const std::string& rstrName);
     //-----------------------------------------------------------------------//
     //***********************************************************************//
   };
@@ -191,4 +170,4 @@ namespace HabuTech
 #include "Camera.hpp"
 #include "Statistics.hpp"
 
-#endif HABU_GRAPHICS_HPP
+#endif MST_GRAPHICS_HPP

@@ -2,31 +2,21 @@
 // Font Class Interface
 //
 // Created Aug 17, 2006
-// By: Jeremy M Miller
+// By: Jeremy Michael Miller
 //
-// Copyright (c) 2006-2011 Jeremy M Miller.  All rights reserved.
-// This source code module, and all information, data, and algorithms
-// associated with it, are part of BlueHabu technology (tm).
-//
-// Usage of HabuGraphics is subject to the appropriate license agreement.
-// A proprietary/commercial licenses are available.
-//                 
-// HabuGraphics is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// HabuGraphics is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with HabuGraphics.  If not, see <http://www.gnu.org/licenses/>.
+// Copyright (c) 2006-2016 Jeremy Michael Miller. 
+// Author: = "Jeremy Michael Miller"
+// Copyright: = "Copyright 2005-2016, Graphical Miller,  All rights reserved."
+// Credits = ["Jeremy Michael Miller"]
+// License: "Fair use v0.9"
+// Version: "0.0.1"
+// Maintainer: "Jeremy Michael Miller"
+// Email: "maybe_later@mst.dnsalias.net"
+// Status: "Alpha"
 //***************************************************************************//
 
-#ifndef HABU_GRAPHICS_FONT_HPP
-#define HABU_GRAPHICS_FONT_HPP
+#ifndef MST_GRAPHICS_FONT_HPP
+#define MST_GRAPHICS_FONT_HPP
 
 //***************************************************************************//
 // System Includes
@@ -34,7 +24,7 @@
 //***************************************************************************//
 
 //***************************************************************************//
-namespace HabuTech
+namespace MST
 {
   //*************************************************************************//
   class Font
@@ -51,16 +41,16 @@ namespace HabuTech
     Font();
     ~Font();
 
-    void _cdecl SetString(const std::string& str);
-    void _cdecl SetString(char* cpStr, unsigned short usLength);
+    void SetString(const std::string& str);
+    void SetString(char* cpStr, unsigned short usLength);
 
-    void _cdecl SetPosition(unsigned short usX, unsigned short usY);
+    void SetPosition(unsigned short usX, unsigned short usY);
 
-    void _cdecl Render();
+    void Render();
     //***********************************************************************//
   }; // End of class Font
   //*************************************************************************//
-} // End of namespace HabuTech
+} // End of namespace MST
 //***************************************************************************//
 
-#endif HABU_GRAPHICS_FONT_HPP
+#endif MST_GRAPHICS_FONT_HPP

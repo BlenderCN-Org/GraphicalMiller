@@ -71,9 +71,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Source\HabuGraphics.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\Source\Statistics.cpp">
       <Filter>Source Files\Utility</Filter>
     </ClCompile>
@@ -119,11 +116,11 @@
     <ClCompile Include="Quadrilateral.cpp">
       <Filter>Source Files\Objects\Meshes</Filter>
     </ClCompile>
+    <ClCompile Include="..\Source\GraphicalMiller.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Include\HabuGraphics.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\Include\Statistics.hpp">
       <Filter>Header Files\Utility</Filter>
     </ClInclude>
@@ -171,6 +168,9 @@
     </ClInclude>
     <ClInclude Include="..\Include\Ground.hpp">
       <Filter>Header Files\Objects\Meshes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GraphicalMiller.hpp">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

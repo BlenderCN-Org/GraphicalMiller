@@ -2,27 +2,17 @@
 // Scene Class Implementation
 //
 // Created Sept 04, 2005
-// By: Jeremy M Miller
+// By: Jeremy Michael Miller
 //
-// Copyright (c) 2005-2011  Jeremy M Miller.  All rights reserved.
-// This source code module, and all information, data, and algorithms
-// associated with it, are part of BlueHabu technology (tm).
-//
-// Usage of HabuGraphics is subject to the appropriate license agreement.
-// A proprietary/commercial licenses are available.
-//                 
-// HabuGraphics is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// HabuGraphics is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with HabuGraphics.  If not, see <http://www.gnu.org/licenses/>.
+// Copyright (c) 2005-2016 Jeremy Michael Miller. 
+// Author: = "Jeremy Michael Miller"
+// Copyright: = "Copyright 2005-2016, Graphical Miller,  All rights reserved."
+// Credits = ["Jeremy Michael Miller"]
+// License: "Fair use v0.9"
+// Version: "0.0.1"
+// Maintainer: "Jeremy Michael Miller"
+// Email: "maybe_later@mst.dnsalias.net"
+// Status: "Alpha"
 //***************************************************************************//
 
 //***************************************************************************//
@@ -45,7 +35,7 @@
 // Local Includes
 #include "Camera.hpp"
 #include "Light.hpp"
-#include "HabuGraphics.hpp"
+#include "GraphicalMiller.hpp"
 #include "Mesh.hpp"
 #include "Material.hpp"
 #include "Texture.hpp"
@@ -71,7 +61,7 @@ using namespace std;
 //***************************************************************************//
 
 //***************************************************************************//
-namespace HabuTech
+namespace MST
 {
   //*************************************************************************//
   // Start of class GeometryBuffer implementation
@@ -169,28 +159,28 @@ namespace HabuTech
   //-------------------------------------------------------------------------//
 
   //-------------------------------------------------------------------------//
-  unsigned long _cdecl GeometryBuffer::MaxVertexElements() const
+  unsigned long  GeometryBuffer::MaxVertexElements() const
   {
     return this->muiMaxVertexSize;
   }
   //-------------------------------------------------------------------------//
 
   //-------------------------------------------------------------------------//
-  unsigned long _cdecl GeometryBuffer::MaxIndexElements() const
+  unsigned long  GeometryBuffer::MaxIndexElements() const
   {
     return this->muiMaxIndexSize;
   }
   //-------------------------------------------------------------------------//
 
   //-------------------------------------------------------------------------//
-  unsigned long _cdecl GeometryBuffer::UsedVertexElements() const
+  unsigned long  GeometryBuffer::UsedVertexElements() const
   {
     return this->muiMaxVertexSize - this->mulVertexFreeElements;
   }
   //-------------------------------------------------------------------------//
 
   //-------------------------------------------------------------------------//
-  unsigned long _cdecl GeometryBuffer::UsedIndexElements() const
+  unsigned long  GeometryBuffer::UsedIndexElements() const
   {
     return this->muiMaxIndexSize - this->mulIndexFreeElements;
   }
@@ -469,11 +459,11 @@ namespace HabuTech
         Shader* pShader = NULL;
         if(strShaderType == "Vertex")
         {
-          pShader = this->CreateShader(strShaderName, HABU_GRAPHICS_VERTEX_SHADER);
+          pShader = this->CreateShader(strShaderName, MST_GRAPHICS_VERTEX_SHADER);
         }
         else if(strShaderType == "Fragment")
         {
-          pShader = this->CreateShader(strShaderName, HABU_GRAPHICS_FRAGMENT_SHADER);
+          pShader = this->CreateShader(strShaderName, MST_GRAPHICS_FRAGMENT_SHADER);
         }
 
         if(pShader)

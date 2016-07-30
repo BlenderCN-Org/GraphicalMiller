@@ -2,39 +2,31 @@
 // Object Class Interface
 //
 // Created: February 1, 2007
-// By: Jeremy M Miller
+// By: Jeremy Michael Miller
 //
-// Copyright (c) 2007-2011 Jeremy M Miller.  All rights reserved.
-// This source code module, and all information, data, and algorithms
-// associated with it, are part of BlueHabu technology (tm).
-//
-// Usage of HabuGraphics is subject to the appropriate license agreement.
-// A proprietary/commercial licenses are available.
-//                 
-// HabuGraphics is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// HabuGraphics is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with HabuGraphics.  If not, see <http://www.gnu.org/licenses/>.
+// Copyright (c) 2007-2016 Jeremy Michael Miller. 
+// Author: = "Jeremy Michael Miller"
+// Copyright: = "Copyright 2005-2016, Graphical Miller,  All rights reserved."
+// Credits = ["Jeremy Michael Miller"]
+// License: "Fair use v0.9"
+// Version: "0.0.1"
+// Maintainer: "Jeremy Michael Miller"
+// Email: "maybe_later@mst.dnsalias.net"
+// Status: "Alpha"
 //***************************************************************************//
 
-#ifndef HABU_GRAPHICS_OBJECT_HPP
-#define HABU_GRAPHICS_OBJECT_HPP
+#ifndef MST_GRAPHICS_OBJECT_HPP
+#define MST_GRAPHICS_OBJECT_HPP
 
 //***************************************************************************//
-// BlueHabu Technologies Includes
-#include <HabuMath.hpp>
+// MST Includes
+#include <MathmaticalMiller.hpp>
+#include <string>
+
 //***************************************************************************//
 
 //***************************************************************************//
-namespace HabuTech
+namespace MST
 {
   //*************************************************************************//
   // Object is the base class for all objects in a 3D scene
@@ -52,10 +44,10 @@ namespace HabuTech
     //***********************************************************************//
     //-----------------------------------------------------------------------//
     // Describes the position of the object.
-    HabuTech::Vector<float, 4> mPosition; // Position is a vector so we can use HabuMath's Dot function
-    HabuTech::Vector<float, 4> mForwardVector;
-    HabuTech::Vector<float, 4> mRightVector;
-    HabuTech::Vector<float, 4> mUpVector;
+    MST::Vector<float, 4> mPosition; // Position is a vector so we can use MathmaticalMiller's Dot function
+    MST::Vector<float, 4> mForwardVector;
+    MST::Vector<float, 4> mRightVector;
+    MST::Vector<float, 4> mUpVector;
     //-----------------------------------------------------------------------//
 
     //-----------------------------------------------------------------------//
@@ -71,7 +63,7 @@ namespace HabuTech
     //-----------------------------------------------------------------------//
 
     //-----------------------------------------------------------------------//
-    HabuTech::Matrix<float, 4> mTransformMatrix;
+    MST::Matrix<float, 4> mTransformMatrix;
     //-----------------------------------------------------------------------//
 
     //-----------------------------------------------------------------------//
@@ -107,43 +99,43 @@ namespace HabuTech
     //-----------------------------------------------------------------------//
     
     //-----------------------------------------------------------------------//
-    const std::string& _cdecl Name() const { return mstrName; } 
-    void _cdecl Name(const std::string& rstrName);
+    const std::string&  Name() const { return mstrName; } 
+    void  Name(const std::string& rstrName);
     //-----------------------------------------------------------------------//
 
     //-----------------------------------------------------------------------//
-    virtual void _cdecl RelativePitch(float fAngle);
-    virtual void _cdecl RelativeRoll(float fAngle);
-    virtual void _cdecl RelativeYaw(float fAngle);
+    virtual void RelativePitch(float fAngle);
+    virtual void RelativeRoll(float fAngle);
+    virtual void RelativeYaw(float fAngle);
 
-    virtual void _cdecl AbsolutePitch(float fAngle);
-    virtual void _cdecl AbsoluteRoll(float fAngle);
-    virtual void _cdecl AbsoluteYaw(float fAngle);
-    //-----------------------------------------------------------------------//
-
-    //-----------------------------------------------------------------------//
-    virtual void _cdecl Position(float fX, float fY, float fZ);
+    virtual void AbsolutePitch(float fAngle);
+    virtual void AbsoluteRoll(float fAngle);
+    virtual void AbsoluteYaw(float fAngle);
     //-----------------------------------------------------------------------//
 
     //-----------------------------------------------------------------------//
-    virtual void _cdecl Move(float fX, float fY, float fZ);
+    virtual void Position(float fX, float fY, float fZ);
+    //-----------------------------------------------------------------------//
+
+    //-----------------------------------------------------------------------//
+    virtual void Move(float fX, float fY, float fZ);
     /// Moves the object left or right relative to its current orientation
-    virtual void _cdecl Strafe(float fDisplacement);
+    virtual void Strafe(float fDisplacement);
     /// Moves the object forward or backwards relative to its current orientation
-    virtual void _cdecl Advance(float fDisplacement);
+    virtual void Advance(float fDisplacement);
     /// Moves the object up or down relative to its current orientation
-    virtual void _cdecl Elevate(float fDisplacement);
+    virtual void Elevate(float fDisplacement);
     //-----------------------------------------------------------------------//
 
     //-----------------------------------------------------------------------//
-    virtual void _cdecl Forward(float fX, float fY, float fZ);
-    virtual void _cdecl Up(float fX, float fY, float fZ);
-    virtual void _cdecl Right(float fX, float fY, float fZ);
+    virtual void Forward(float fX, float fY, float fZ);
+    virtual void Up(float fX, float fY, float fZ);
+    virtual void Right(float fX, float fY, float fZ);
     //-----------------------------------------------------------------------//
     //***********************************************************************//
   }; // End of class Object
   //*************************************************************************//
-} // End of namespace HabuTech
+} // End of namespace MST
 //***************************************************************************//
 
-#endif HABU_GRAPHICS_OBJECT_HPP
+#endif MST_GRAPHICS_OBJECT_HPP

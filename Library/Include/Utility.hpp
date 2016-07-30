@@ -2,31 +2,21 @@
 // Utility Classes Interfaces
 //
 // Created Jan 01, 2005
-// By: Jeremy M Miller
+// By: Jeremy Michael Miller
 //
-// Copyright (c) 2005-2011 Jeremy M Miller.  All rights reserved.
-// This source code module, and all information, data, and algorithms
-// associated with it, are part of BlueHabu technology (tm).
-//
-// Usage of HabuGraphics is subject to the appropriate license agreement.
-// A proprietary/commercial licenses are available.
-//                 
-// HabuGraphics is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// HabuGraphics is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with HabuGraphics.  If not, see <http://www.gnu.org/licenses/>.
+// Copyright (c) 2005-2016 Jeremy Michael Miller. 
+// Author: = "Jeremy Michael Miller"
+// Copyright: = "Copyright 2005-2016, Graphical Miller,  All rights reserved."
+// Credits = ["Jeremy Michael Miller"]
+// License: "Fair use v0.9"
+// Version: "0.0.1"
+// Maintainer: "Jeremy Michael Miller"
+// Email: "maybe_later@mst.dnsalias.net"
+// Status: "Alpha"
 //***************************************************************************//
 
-#ifndef HABU_GRAPHICS_UTILITY_HPP
-#define HABU_GRAPHICS_UTILITY_HPP
+#ifndef MST_GRAPHICS_UTILITY_HPP
+#define MST_GRAPHICS_UTILITY_HPP
 
 //***************************************************************************//
 // System Includes
@@ -38,12 +28,12 @@
 //***************************************************************************//
 
 //***************************************************************************//
-// BlueHabu Technologies Includes
-#include <HabuMath.hpp>
+// MST Includes
+#include <MathmaticalMiller.hpp>
 //***************************************************************************//
 
 //***************************************************************************//
-namespace HabuTech
+namespace MST
 {
   //*************************************************************************//
 #pragma pack(push, 1)
@@ -68,28 +58,28 @@ namespace HabuTech
 
     //-----------------------------------------------------------------------//
     /// These methods return the value of the color
-    T _cdecl A() const { return this->mtColors[3]; }
-    T _cdecl R() const { return this->mtColors[0]; }
-    T _cdecl G() const { return this->mtColors[1]; }
-    T _cdecl B() const { return this->mtColors[2]; }
+    T  A() const { return this->mtColors[3]; }
+    T  R() const { return this->mtColors[0]; }
+    T  G() const { return this->mtColors[1]; }
+    T  B() const { return this->mtColors[2]; }
     //-----------------------------------------------------------------------//
 
     //-----------------------------------------------------------------------//
     /// These methods set the value of the color
-    void _cdecl A(T tAlpha) { this->mtColors[3] = tAlpha; }
-    void _cdecl R(T tRed)   { this->mtColors[0] = tRed; }
-    void _cdecl G(T tGreen) { this->mtColors[1] = tGreen; }
-    void _cdecl B(T tBlue)  { this->mtColors[2] = tBlue;}
+    void  A(T tAlpha) { this->mtColors[3] = tAlpha; }
+    void  R(T tRed)   { this->mtColors[0] = tRed; }
+    void  G(T tGreen) { this->mtColors[1] = tGreen; }
+    void  B(T tBlue)  { this->mtColors[2] = tBlue;}
     //-----------------------------------------------------------------------//
 
     //-----------------------------------------------------------------------//
-    T* _cdecl Array() { return this->mtColors; }
+    T*  Array() { return this->mtColors; }
     //-----------------------------------------------------------------------//
 
     //-----------------------------------------------------------------------//
     /// Overloaded '=" operator so assignment of one color to another can be managed
     /// Current this method does nothing more than the non-overloaded '=' operator
-    class Color& _cdecl operator=(const class Color& rhs)
+    class Color&  operator=(const class Color& rhs)
     {
       //---------------------------------------------------------------------//
       memcpy(this->mtColors, rhs.mtColors, 4 * sizeof(T));
@@ -121,8 +111,8 @@ namespace HabuTech
     //-----------------------------------------------------------------------//
 
     //-----------------------------------------------------------------------//
-    HabuTech::Point <float, 3>  mPosition;
-    HabuTech::Vector<float, 3>  mNormal;
+    MST::Point <float, 3>  mPosition;
+    MST::Vector<float, 3>  mNormal;
     float mTextureUV[2];
     //-----------------------------------------------------------------------//
 
@@ -138,7 +128,7 @@ namespace HabuTech
   }; // End of class Vertex
 #pragma pack(pop)
   //*************************************************************************//
-} // End of namespace HabuTech
+} // End of namespace MST
 //***************************************************************************//
 
-#endif HABU_GRAPHICS_UTILITY_HPP
+#endif MST_GRAPHICS_UTILITY_HPP

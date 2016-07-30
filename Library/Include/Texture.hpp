@@ -2,31 +2,21 @@
 // Texture Class Interface
 //
 // Created May 13, 2005
-// By: Jeremy M Miller
+// By: Jeremy Michael Miller
 //
-// Copyright (c) 2005-2011 Jeremy M Miller.  All rights reserved.
-// This source code module, and all information, data, and algorithms
-// associated with it, are part of BlueHabu technology (tm).
-//
-// Usage of HabuGraphics is subject to the appropriate license agreement.
-// A proprietary/commercial licenses are available.
-//                 
-// HabuGraphics is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// HabuGraphics is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with HabuGraphics.  If not, see <http://www.gnu.org/licenses/>.
+// Copyright (c) 2005-2016 Jeremy Michael Miller. 
+// Author: = "Jeremy Michael Miller"
+// Copyright: = "Copyright 2005-2016, Graphical Miller,  All rights reserved."
+// Credits = ["Jeremy Michael Miller"]
+// License: "Fair use v0.9"
+// Version: "0.0.1"
+// Maintainer: "Jeremy Michael Miller"
+// Email: "maybe_later@mst.dnsalias.net"
+// Status: "Alpha"
 //***************************************************************************//
 
-#ifndef HABU_GRAPHICS_TEXTURE_HPP
-#define HABU_GRAPHICS_TEXTURE_HPP
+#ifndef MST_GRAPHICS_TEXTURE_HPP
+#define MST_GRAPHICS_TEXTURE_HPP
 
 //***************************************************************************//
 // System Includes
@@ -37,7 +27,7 @@
 #include "Utility.hpp"
 
 //***************************************************************************//
-namespace HabuTech
+namespace MST
 {
   //*************************************************************************//
   enum TextureType
@@ -91,45 +81,45 @@ namespace HabuTech
     //-----------------------------------------------------------------------//
 
     //-----------------------------------------------------------------------//
-    const std::string& _cdecl Name() const { return this->mstrName; }
+    const std::string&  Name() const { return this->mstrName; }
     //-----------------------------------------------------------------------//
 
     //-----------------------------------------------------------------------//
-    unsigned long _cdecl Binding() {return mulTextureBinding;}
+    unsigned long  Binding() {return mulTextureBinding;}
     //-----------------------------------------------------------------------//
 
     //-----------------------------------------------------------------------//
-    virtual bool _cdecl Load(std::ifstream& ifs);
+    virtual bool  Load(std::ifstream& ifs);
     //-----------------------------------------------------------------------//
 
     //-----------------------------------------------------------------------//
     // Binds the the current texture to make it active
-    void _cdecl Bind() const;
-    void _cdecl Unbind() const;
+    void  Bind() const;
+    void  Unbind() const;
     //-----------------------------------------------------------------------//
 
     //-----------------------------------------------------------------------//
-    void _cdecl Initialize();
+    void  Initialize();
     //-----------------------------------------------------------------------//
 
     //-----------------------------------------------------------------------//
     /// The below methods are getters for this classes private members
     /// The const keyword is not needed for Width(), Height(), Depth() but 
     /// it signifies that these methods are read only getters
-    unsigned char _cdecl DepthInBits()    const;
-    unsigned char _cdecl DepthInBytes()   const;
-    unsigned short _cdecl Width()   const;
-    unsigned short _cdecl Height()  const;
+    unsigned char  DepthInBits()    const;
+    unsigned char  DepthInBytes()   const;
+    unsigned short  Width()   const;
+    unsigned short  Height()  const;
     
     /// Returns the a pointer to the image buffer
-    Color<unsigned char>* _cdecl Image()   const;
+    Color<unsigned char>*  Image()   const;
     //-----------------------------------------------------------------------//
 
-    void _cdecl Render() { this->Bind(); };
+    void  Render() { this->Bind(); };
     //***********************************************************************//
   }; // End of class Texture : public Surface
   //*************************************************************************//
-} // End of namespace HabuTech
+} // End of namespace MST
 //***************************************************************************//
 
-#endif HABU_GRAPHICS_TEXTURE_HPP
+#endif MST_GRAPHICS_TEXTURE_HPP
