@@ -3,7 +3,7 @@
 	url = https://github.com/jeremymm/MultithreadedMiller.git
 [submodule "Modules/MST/InputMiller"]
 	path = Modules/MST/InputMiller
-	url = ../InputMiller.git
+	url = https://github.com/jeremymm/InputMiller.git
 [submodule "Modules/MST/MathematicalMiller"]
 	path = Modules/MST/MathematicalMiller
 	url = https://github.com/jeremymm/MathematicalMiller.git
